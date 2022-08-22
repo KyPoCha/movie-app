@@ -1,10 +1,12 @@
 import React from "react";
 import Header from "./layout/Header";
+import Footer from "./layout/Footer";
 function App(){
     return (
-        <div className="App">
+        <React.Fragment>
             <Header/>
-        </div>
+            <Footer/>
+        </React.Fragment>
     );
 }
 
