@@ -4,13 +4,18 @@ export default class Search extends React.Component{
 
     state = {
         search: "",
-        type: "",
+        searchNameMount: "",
+        type: "all",
     }
 
     handleKey = (event)=>{
         if(event.key === "Enter"){
             this.props.searchMovies(this.state.search);
         }
+    }
+
+    componentDidMount() {
+        this.setState({search: "Iron Man"});
     }
 
     handleFilter = (event)=>{
@@ -27,8 +32,8 @@ export default class Search extends React.Component{
                             id="search_inline"
                             type="search"
                             placeholder="Search"
-                            value={this.state.search}
-                            onChange={(event)=>this.setState({search: event.target.value})}
+                            value={this.state.searchNameMount}
+                            onChange={(event)=>this.setState({search: event.target.value, searchNameMount: event.target.value})}
                             onKeyDown={this.handleKey}
                         />
                 <button className="waves-effect waves-light btn pink darken-4 grey-text text-lighten-5 btn-search"
